@@ -36,7 +36,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         String jwt = getJwtFromRequest(request);
         if (jwt != null) {
-            String username = jwtTokenUtil.getUsernameFromToken(jwt);
+            String username = jwtTokenUtil.getSubjectFromToken(jwt);
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 UserDetails userDetails = userDetailsService.loadUserByUsername(username);
                 if (!jwtTokenUtil.isTokenExpired(jwt)) {

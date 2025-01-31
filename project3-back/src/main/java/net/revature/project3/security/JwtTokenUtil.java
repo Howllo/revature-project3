@@ -42,14 +42,14 @@ public class JwtTokenUtil {
         }
 
         try {
-            String tokenUsername = getUsernameFromToken(token);
+            String tokenUsername = getSubjectFromToken(token);
             return (tokenUsername.equals(email) && !isTokenExpired(token));
         } catch (Exception e) {
             return false;
         }
     }
 
-    public String getUsernameFromToken(String token) {
+    public String getSubjectFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
     }
 

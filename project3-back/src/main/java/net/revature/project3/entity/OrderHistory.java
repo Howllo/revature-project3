@@ -1,9 +1,13 @@
 package net.revature.project3.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "order_history")
 public class OrderHistory {
@@ -33,46 +37,6 @@ public class OrderHistory {
         this.user = user;
         this.totalPrice = totalPrice;
         this.status = status;
-        this.createdAt = createdAt;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public AppUser getUser() {
-        return user;
-    }
-
-    public void setUser(AppUser user) {
-        this.user = user;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
     }
 }
