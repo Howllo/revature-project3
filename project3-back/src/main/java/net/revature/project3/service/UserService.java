@@ -21,4 +21,6 @@ public class UserService {
     }
 
     public boolean existsByEmail(String email) { return userRepo.existsByEmail(email); }
+
+    public Optional<AppUser> findById(Long id) { return userRepo.findById(id); }
 }

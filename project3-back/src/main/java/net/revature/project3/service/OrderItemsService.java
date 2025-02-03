@@ -1,48 +1,31 @@
 package net.revature.project3.service;
 
-import net.revature.project3.entity.AppUser;
+import net.revature.project3.dto.OrderItemRequestDto;
+import net.revature.project3.dto.OrderItemsResponseDto;
 import net.revature.project3.repository.OrderItemsRepo;
-import net.revature.project3.security.JwtTokenUtil;
+import net.revature.project3.utils.TokenValidationCheck;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class OrderItemsService {
     private final OrderItemsRepo orderItemsRepo;
-    private final UserService userService;
-    private final JwtTokenUtil jwtTokenUtil;
+    private final TokenValidationCheck tokenValidationCheck;
 
     @Autowired
-    public OrderItemsService(OrderItemsRepo orderItemsRepo, UserService userService, JwtTokenUtil jwtTokenUtil) {
+    public OrderItemsService(OrderItemsRepo orderItemsRepo, UserService userService,
+                             TokenValidationCheck tokenValidationCheck) {
         this.orderItemsRepo = orderItemsRepo;
-        this.userService = userService;
-        this.jwtTokenUtil = jwtTokenUtil;
+        this.tokenValidationCheck = tokenValidationCheck;
     }
 
-    /**
-     * Used to verify information about the user.
-     * @param token Take in a token to be processed.
-     * @param userId Take in a user id to verify the process.
-     * @return Return {@code True} if the token ID and user ID is same or {@code False} if they are not the same.
-     */
-    public boolean isValidToken(String token, Long userId) {
-        Optional<AppUser> optionalAppUser = getUser(token);
-        if(optionalAppUser.isEmpty()){
-            return false;
+    public List<OrderItemsResponseDto> getAllOrderItems(Long id, OrderItemRequestDto itemRequestDto, String token) {
+        if(token == null || token.isEmpty() || itemRequestDto == null || !tokenValidationCheck.isValidToken(token, id)) {
+            return new ArrayList<>();
         }
-        AppUser appUser = optionalAppUser.get();
-        return Objects.equals(userId, appUser.getId());
-    }
-
-    /**
-     * Returns the user of a token if there is a username listed.
-     * @param token Take in the JWT token to be processed.
-     * @return The AppUser that is associated with the token.
-     */
-    private Optional<AppUser> getUser(String token) {
-        return userService.findByEmail(jwtTokenUtil.getSubjectFromToken(token));
+        return orderItemsRepo.findByOrderIdIn(itemRequestDto.orderHistoryIds());
     }
 }

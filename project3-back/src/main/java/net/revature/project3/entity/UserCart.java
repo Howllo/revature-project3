@@ -1,10 +1,14 @@
 package net.revature.project3.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "user_cart")
 public class UserCart {
     @Id
@@ -27,51 +31,9 @@ public class UserCart {
 
     public UserCart() {}
 
-    public UserCart(Long id, AppUser userId, Product productId, Long quantity, Timestamp createdAt) {
-        this.id = id;
+    public UserCart(AppUser userId, Product productId, Long quantity) {
         this.userId = userId;
         this.productId = productId;
         this.quantity = quantity;
-        this.createdAt = createdAt;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public AppUser getUserId() {
-        return userId;
-    }
-
-    public void setUserId(AppUser userId) {
-        this.userId = userId;
-    }
-
-    public Product getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Product productId) {
-        this.productId = productId;
-    }
-
-    public Long getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Long quantity) {
-        this.quantity = quantity;
-    }
-
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
     }
 }

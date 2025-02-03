@@ -1,6 +1,7 @@
 package net.revature.project3.controller;
 
 import net.revature.project3.dto.OrderItemsResponseDto;
+import net.revature.project3.dto.OrderItemRequestDto;
 import net.revature.project3.service.OrderItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,9 @@ public class OrderItemsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<List<OrderItemsResponseDto>> getOrderItems(@PathVariable int id,
+    public ResponseEntity<List<OrderItemsResponseDto>> getOrderItems(@PathVariable Long id,
+                                                                     @RequestBody OrderItemRequestDto itemRequestDto,
                                                                      @RequestHeader("Authorization") String token) {
-
+        return ResponseEntity.ok(orderItemsService.getAllOrderItems(id, itemRequestDto, token.substring(7)));
     }
 }

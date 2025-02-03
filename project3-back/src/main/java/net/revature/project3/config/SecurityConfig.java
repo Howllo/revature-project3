@@ -151,8 +151,8 @@ public class SecurityConfig {
             var user = optionalUser.get();
 
             List<GrantedAuthority> authorities = new ArrayList<>();
-            String roleWithPrefix = user.getRole().startsWith("ROLE_") ?
-                    user.getRole() : "ROLE_" + user.getRole().toUpperCase();
+            String roleWithPrefix = user.getUserRole().startsWith("ROLE_") ?
+                    user.getUserRole() : "ROLE_" + user.getUserRole().toUpperCase();
             authorities.add(new SimpleGrantedAuthority(roleWithPrefix));
 
             return new User(user.getName(),

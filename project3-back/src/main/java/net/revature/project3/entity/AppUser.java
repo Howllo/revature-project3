@@ -18,22 +18,25 @@ public class AppUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "email")
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "password")
     private String password;
 
-    @Column(name = "name")
+    @Column(nullable = false, name = "name")
     private String name;
 
     @Column(name = "profile_pic")
     private String profilePic;
 
-    @Column(name = "role")
+    @Column(nullable = false, name = "role")
     private String userRole = "ROLE_USER";
 
-    @Column(name = "created_at", nullable = false)
+    @Column(nullable = false, name = "verify")
+    private boolean verify;
+
+    @Column(nullable = false, name = "created_at")
     private Timestamp createdAt;
 
     @ManyToMany

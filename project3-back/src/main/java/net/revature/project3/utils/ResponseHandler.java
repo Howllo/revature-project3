@@ -20,6 +20,7 @@ public class ResponseHandler {
                 }
                 yield ResponseEntity.ok(message.length > 0 ? message[0] : "Operation completed successfully.");
             }
+
             case "SUCCESS_DELETED", "SUCCESS_UPDATED" ->
                     ResponseEntity.ok(message.length > 0 ? message[0] : "Operation completed successfully.");
 
