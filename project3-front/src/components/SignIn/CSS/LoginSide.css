@@ -1,0 +1,66 @@
+﻿.LogInSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 125px;
+    height: 100vh;
+    max-width: 43.5vw;
+    width: 100%;
+    background-color: #ffffff !important;
+}
+
+.SignInContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.SignInText {
+    color: #000000 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+}
+
+.SignInLine {
+    display: flex;
+    flex-direction: column;
+    color: #e45252 !important;
+}
+
+.EmailText {
+    margin-top: 5px !important;
+    color: #000000 !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+}
+
+.BreakContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.FirstLine {
+    color: rgb(212,217,225) !important;
+    max-width: 210px !important;
+    width: 210px !important;
+    height: 1px !important;
+    background-color:  rgb(212,217,225) !important;
+    margin-top: 6px !important;
+}
+
+.OrText {
+    color: #000000 !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    margin-left: 10px !important;
+}
+
+.SecondLine {
+    color: rgb(212,217,225) !important;
+    max-width: 210px !important;
+    width: 210px !important;
+    height: 1px !important;
+    background-color:  rgb(212,217,225) !important;
+    margin-top: 6px !important;
+    margin-left: 10px !important;
+}

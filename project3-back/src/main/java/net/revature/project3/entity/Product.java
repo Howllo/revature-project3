@@ -39,7 +39,7 @@ public class Product {
     private Timestamp createdAt;
 
     @ManyToMany(mappedBy = "favoriteProducts")
-    private final Set<Product> usersWhoFavorite  = new HashSet<>();
+    private final Set<AppUser> usersWhoFavorite  = new HashSet<>();
 
     public Product() {}
 

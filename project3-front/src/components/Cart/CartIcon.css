@@ -1,0 +1,20 @@
+﻿.CartIcon {
+    display: flex;
+    margin-left: 10px !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px !important;
+}
+
+.CartNumber {
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    font-size: 0.75rem !important;
+    color: #c8102e !important;
+    font-weight: 500;
+}

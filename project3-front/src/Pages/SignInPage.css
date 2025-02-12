@@ -1,0 +1,6 @@
+﻿.SignInContainer {
+    display: flex;
+    justify-content: space-evenly !important;
+    flex-direction: row;
+    overflow: hidden;
+}

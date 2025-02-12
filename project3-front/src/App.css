@@ -1,0 +1,7 @@
+.ImageCarousel {
+    position: relative;
+    width: 50vw;
+    height: 100%;
+    overflow: hidden;
+    color: #f9f9f9;
+}

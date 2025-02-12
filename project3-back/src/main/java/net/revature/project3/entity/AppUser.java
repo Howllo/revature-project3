@@ -45,7 +45,7 @@ public class AppUser {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
-    private final Set<Product> products = new HashSet<>();
+    private final Set<Product> favoriteProducts = new HashSet<>();
 
     public AppUser() {}
 

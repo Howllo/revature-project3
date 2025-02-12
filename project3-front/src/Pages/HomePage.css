@@ -1,0 +1,90 @@
+﻿.AppBar {
+    position: absolute;
+    top: 0;
+    flex-direction: row;
+    background-color: #ffffff;
+    color: #fff;
+    width: 100vw;
+    height: 75px;
+    align-items: center;
+}
+
+.IconContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 20vw;
+}
+
+.IconButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px !important;
+}
+
+.IconButton:hover {
+    background-color: #fff !important;
+}
+
+.ShopName {
+    font-weight: bold !important;
+    color: #000000 !important;
+    font-size: 30px !important;
+}
+
+.MenuBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 5px !important;
+}
+
+.Link {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.Link:hover {
+    color: black !important;
+}
+
+.Women {
+    display: flex;
+    color: black;
+    margin-left: 60px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+.Men {
+    display: flex;
+    margin-left: 50px !important;
+    padding-right: 10px;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+.Accessories {
+    display: flex;
+    margin-left: 50px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+.LoginIcon {
+    display: flex;
+    margin-left: 20px !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px !important;
+}
+
+.FavoriteIcon {
+    display: flex;
+    margin-left: 10px !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px !important;
+}
