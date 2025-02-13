@@ -1,6 +1,10 @@
 ﻿.SignInContainer {
     display: flex;
-    justify-content: space-evenly !important;
     flex-direction: row;
-    overflow: hidden;
+}
+
+@media (width <= 770px) {
+    .SignInContainer {
+        flex-direction: column;
+    }
 }
