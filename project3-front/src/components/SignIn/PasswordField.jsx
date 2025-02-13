@@ -21,7 +21,7 @@ const PasswordFieldSignIn = ({password, setPassword}) => {
         value={password}
         onChange={(e) => handlePasswordChange(e)}
         sx={{
-          maxWidth: '450px',
+          maxWidth: '100%',
           marginTop: '10px',
           width: '100%',
         }}

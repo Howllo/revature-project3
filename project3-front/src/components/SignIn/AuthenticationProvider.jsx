@@ -1,4 +1,4 @@
-﻿import {createContext} from "react";
+﻿import {createContext, useState} from "react";
 
 const AuthenticationContext = createContext(null);
 
@@ -10,7 +10,9 @@ export const AuthenticationProvider = ({ children }) => {
   const [credentialsInvalid, setCredentialsInvalid] = useState(false);
 
   const value = {
-
+    email: data.email,
+    password: data.password,
+    setData,
   };
 
   return (
